@@ -1,0 +1,33 @@
+{% extends "widget/base.html"%}
+{% block content %}
+{% load static %}
+<div id="col-lg-12">
+  <h1 class="page-header">
+  <label for="widget_id">Your Widget ID : </label>
+  <label style="margin-left:3em">{{WID}}</label></h1>
+</div>
+
+<div id="col-lg-12">
+    <p>* Please insert below to your website. You can also customize the units to display on the widget.</p>
+    <br/><h4>Horizontal Version: </h4><br/>
+    <img src="{% static 'widget/img/horizontal.png' %}" />
+    <br/>
+     <h5 style="background-color:yellow;"> HTML Code :</H5>
+     &lt;div id=&quot;{{WID}}&quot; class=&quot;bsky-widget&quot; data-bskywid=&quot;{{WID}}&quot; data-bskyth=&quot;rec770x190&quot; data-bskytp=&quot;c&quot; data-bskyra=&quot;mm&quot; data-bskyws=&quot;kph&quot;
+     data-bskypr=&quot;inHg&quot; data-bskyloc=&quot;T-Sky1C&quot; style=&quot;height: 190px;width: 770px; &quot;&gt;&lt;/div&gt;
+     <H5 style="background-color:yellow;">JS Code :</h5>
+     &lt;script type=&quot;text/javascript&quot; src=&quot;https://storage.googleapis.com/bsky-widget-assest-version-2/bsky-widget-loader-horizontal.min.js&quot;&gt;&lt;/script&gt;
+     <br/>
+     <hr/>
+     <br/><h4>Vertical Version: </h4><br/>
+     <img src="{% static 'widget/img/vertical.png' %}" />
+     <h5 style="background-color:yellow;"> HTML Code :</H5>
+     &lt;div id=&quot;{{WID}}&quot; class=&quot;bsky-widget&quot; data-bskywid=&quot;{{WID}}&quot; data-bskyth=&quot;rec180x590&quot; data-bskytp=&quot;c&quot; data-bskyra=&quot;mm&quot; data-bskyws=&quot;kph&quot;
+     data-bskypr=&quot;inHg&quot; data-bskyloc=&quot;T-Sky1C&quot; style=&quot;height: 590px;width: 180px; &quot;&gt;&lt;/div&gt;
+     <H5 style="background-color:yellow;">JS Code :</h5>
+     &lt;script type=&quot;text/javascript&quot; src=&quot;https://storage.googleapis.com/bsky-widget-assest-version-2/bsky-widget-loader.min.js&quot;&gt;&lt;/script&gt;
+</div>
+
+
+
+{% endblock %}

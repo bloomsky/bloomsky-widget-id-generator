@@ -1,0 +1,39 @@
+{% extends 'widget/base.html' %}
+{% block content %}
+<div class="col-sm-12">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4>Devices Found</h4>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>DeviceID</th>
+          <th>DeviceName</th>
+          <th>Address</th>
+          <th>LAT</th>
+          <th>LON</th>
+          <th>UTC</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for element in found_device%}
+          <tr>
+            <td><a href="{% url 'widget:generator' %}?deviceinfo={{ element.DeviceID }}" >{{ element.DeviceID }}</a></td>
+            <td>{{ element.DeviceName }}</td>
+            <td>{{ element.FullAddress }}</td>
+            <td>{{ element.LAT }}</td>
+            <td>{{ element.LON }}</td>
+            <td>{{ element.UTC }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+</table>
+   </div>
+<div class="panel-footer">
+    Device Name Matching : <strong>{{device_name}} </strong>
+</div>
+</div>
+</div>
+{% endblock %}
